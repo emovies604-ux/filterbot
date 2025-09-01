@@ -1,7 +1,12 @@
 from pyrogram import Client, idle
 from config import API_ID, API_HASH, BOT_TOKEN
 
-app = Client("movie_filter_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+app = Client(
+    name=None,  # This tells Pyrogram it's a bot session
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN
+)
 
 # Import handlers AFTER app is defined
 from handlers import start, filter
